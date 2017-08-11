@@ -3,7 +3,8 @@ package com.frogermcs.recipes.dagger_activities_multibinding;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.frogermcs.recipes.dagger_activities_multibinding.di.activity.HasActivitySubcomponentBuilders;
+import com.frogermcs.recipes.dagger_activities_multibinding.application.MyApplication;
+import com.frogermcs.recipes.dagger_activities_multibinding.application.activity.HasPerViewSubComponentBuilders;
 
 /**
  * Created by froger_mcs on 09/08/16.
@@ -20,5 +21,5 @@ public abstract class BaseActivity extends AppCompatActivity {
         injectMembers(MyApplication.get(this));
     }
 
-    protected abstract void injectMembers(HasActivitySubcomponentBuilders hasActivitySubcomponentBuilders);
+    protected abstract void injectMembers(HasPerViewSubComponentBuilders hasActivitySubComponentBuilders);
 }

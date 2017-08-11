@@ -2,7 +2,8 @@ package com.frogermcs.recipes.dagger_activities_multibinding;
 
 import android.app.Activity;
 
-import com.frogermcs.recipes.dagger_activities_multibinding.di.activity.ActivityComponentBuilder;
+import com.frogermcs.recipes.dagger_activities_multibinding.application.MyApplication;
+import com.frogermcs.recipes.dagger_activities_multibinding.application.activity.PerViewComponentBuilder;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,11 +15,11 @@ import javax.inject.Provider;
  */
 public class ApplicationMock extends MyApplication {
 
-    public void putActivityComponentBuilder(final ActivityComponentBuilder builder, Class<? extends Activity> cls) {
-        Map<Class<? extends Activity>, Provider<ActivityComponentBuilder>> activityComponentBuilders = new HashMap<>(this.activityComponentBuilders);
-        activityComponentBuilders.put(cls, new Provider<ActivityComponentBuilder>() {
+    public void putActivityComponentBuilder(final PerViewComponentBuilder builder, Class<? extends Activity> cls) {
+        Map<Class<? extends Activity>, Provider<PerViewComponentBuilder>> activityComponentBuilders = new HashMap<>(this.activityComponentBuilders);
+        activityComponentBuilders.put(cls, new Provider<PerViewComponentBuilder>() {
             @Override
-            public ActivityComponentBuilder get() {
+            public PerViewComponentBuilder get() {
                 return builder;
             }
         });
