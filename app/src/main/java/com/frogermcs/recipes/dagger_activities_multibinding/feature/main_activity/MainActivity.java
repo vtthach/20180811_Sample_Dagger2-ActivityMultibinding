@@ -30,7 +30,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void injectMembers(HasPerViewSubComponentBuilders hasActivitySubComponentBuilders) {
         ((MainPerViewComponent.Builder) hasActivitySubComponentBuilders.getActivityComponentBuilder(MainActivity.class))
-                .activityModule(new MainPerViewComponent.MainActivityModule(this))
+                .viewModule(new MainPerViewComponent.MainActivityModule(this))
                 .build()
                 .injectMembers(this);
     }

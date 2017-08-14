@@ -26,7 +26,7 @@ public class SecondActivity extends BaseActivity {
     @Override
     protected void injectMembers(HasPerViewSubComponentBuilders hasActivitySubComponentBuilders) {
         ((SecondPerViewComponent.Builder) hasActivitySubComponentBuilders.getActivityComponentBuilder(SecondActivity.class))
-                .activityModule(new SecondPerViewComponent.SecondActivityModule(this))
+                .viewModule(new SecondPerViewComponent.SecondActivityModule(this))
                 .build()
                 .injectMembers(this);
     }

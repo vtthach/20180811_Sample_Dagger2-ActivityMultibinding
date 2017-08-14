@@ -53,7 +53,7 @@ public class MainActivityUITest {
     @Before
     public void setUp() {
         when(builder.build()).thenReturn(mainActivityComponent);
-        when(builder.activityModule(any(MainPerViewComponent.MainActivityModule.class))).thenReturn(builder);
+        when(builder.viewModule(any(MainPerViewComponent.MainActivityModule.class))).thenReturn(builder);
 
         ApplicationMock app = (ApplicationMock) InstrumentationRegistry.getTargetContext().getApplicationContext();
         app.putActivityComponentBuilder(builder, MainActivity.class);

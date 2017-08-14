@@ -9,15 +9,15 @@ import dagger.Provides;
 
 @Module
 public abstract class PerViewModule<T> {
-    protected final T activity;
+    protected final T view;
 
-    public PerViewModule(T activity) {
-        this.activity = activity;
+    public PerViewModule(T view) {
+        this.view = view;
     }
 
     @Provides
     @PerViewScope
-    public T provideActivity() {
-        return activity;
+    public T provideView() {
+        return view;
     }
 }

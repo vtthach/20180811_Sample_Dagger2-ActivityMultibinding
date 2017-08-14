@@ -5,6 +5,6 @@ package com.frogermcs.recipes.dagger_activities_multibinding.application.activit
  */
 
 public interface PerViewComponentBuilder<M extends PerViewModule, C extends PerViewComponent> {
-    PerViewComponentBuilder<M, C> activityModule(M activityModule);
+    PerViewComponentBuilder<M, C> viewModule(M viewModule);
     C build();
 }
